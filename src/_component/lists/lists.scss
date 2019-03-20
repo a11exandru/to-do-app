@@ -88,6 +88,9 @@ li {
 }
 
 .todo#completed {
+    padding: 60px 0 0 0;
+    position: relative;
+
     .complete svg {
         background: #25b99a;
         border: 0;
@@ -97,12 +100,7 @@ li {
         }
     }
 
-    &:not(:empty) {
-        padding: 60px 0 0 0;
-        position: relative;
-    }
-
-    &:not(:empty):before {
+    &:before {
         content: '';
         width: 150px;
         height: 1px;
@@ -122,4 +120,17 @@ li {
             fill: #fff;
         }
     }
+}
+
+.todo#todo:empty:after {
+    content: 'Nu ai de completat niciun task!';
+    margin-top: 15px;
+}
+
+.todo#todo:after {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
 }
