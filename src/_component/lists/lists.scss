@@ -69,10 +69,57 @@ li {
     }
 }
 
+.complete svg {
+    border-radius: 11px;
+    border: 1.4px solid #25b99a;
+    transition: background 0.2s ease;
+}
+
 .remove svg .fill {
     fill: #c0cecb;
 }
 
 .remove:hover svg .fill {
     fill: #e85656;
+}
+
+.complete svg .fill {
+    fill: #25b99a;
+}
+
+.todo#completed {
+    .complete svg {
+        background: #25b99a;
+        border: 0;
+
+        .fill {
+            fill: #fff;
+        }
+    }
+
+    &:not(:empty) {
+        padding: 60px 0 0 0;
+        position: relative;
+    }
+
+    &:not(:empty):before {
+        content: '';
+        width: 150px;
+        height: 1px;
+        background: #d8e5e0;
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        margin: 0 0 0 -75px;
+    }
+}
+
+.todo:not(#completed) {
+    .complete:hover svg {
+        background: rgba(37, 185, 154, 0.66);
+
+        .fill {
+            fill: #fff;
+        }
+    }
 }
