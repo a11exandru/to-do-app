@@ -122,15 +122,36 @@ li {
     }
 }
 
+%todo-content {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+
 .todo#todo:empty:after {
     content: 'Nu ai de completat niciun task!';
     margin-top: 15px;
+    color: #aaa;
+    @extend %todo-content;
 }
 
-.todo#todo:after {
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
+.todo#todo:not(:empty):before {
+    content: 'Activitati necompletate';
+    @extend %todo-content;
     color: #aaa;
+    margin-bottom: 1rem;
+}
+
+.todo#completed:not(:empty) {
+    padding-top: 5rem;
+}
+
+.todo#completed:not(:empty):after {
+    content: 'Activitati completate';
+    @extend %todo-content;
+    color: #25b99a;
+    display: block;
+    position: absolute;
+    top: 3rem;
+    width: 100%;
 }
