@@ -16,6 +16,7 @@ document.getElementById('add').addEventListener('click', () => {
     let value = document.getElementById('item').value;
     if(value) addItemToDo(value);
     data.todo.push(value);
+    dataObjectUpdated();
     form.value = "";
     form.focus();
 });
