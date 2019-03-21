@@ -100,7 +100,7 @@ li {
         }
     }
 
-    &:before {
+    &:not(:empty):before {
         content: '';
         width: 150px;
         height: 1px;

@@ -104,6 +104,7 @@ function addItemToDo(text, completed) {
     let complete = document.createElement('button');
     complete.classList.add('complete');
     complete.innerHTML = completeSVG;
+    complete.title = "Marcheaza ca facut"
     
     //  Add click event for completing items
     complete.addEventListener('click', completeItem)
