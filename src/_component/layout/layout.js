@@ -19,6 +19,7 @@ document.getElementById('add').addEventListener('click', () => {
     dataObjectUpdated();
     form.value = "";
     form.focus();
+    time();
 });
 
 document.getElementById('item').addEventListener('keydown', function(event) {
@@ -116,3 +117,12 @@ function addItemToDo(text, completed) {
     
     list.insertBefore(item, list.childNodes[0]);
 }
+
+// incercare de a adauga timpul la liste
+
+// function time() {
+//     let time = document.createElement('h1');
+//     time.className = 'time';
+//     time.innerHTML = "salut";
+//     console.log(time);
+// }
